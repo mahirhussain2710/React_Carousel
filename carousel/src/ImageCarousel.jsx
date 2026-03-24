@@ -1,52 +1,3 @@
-# Ex05 Image Carousel
-## Date: 18/03/2026
-
-```
-Name : Mahir Hussain S
-Reg. No : 212223040109
-```
-
-## AIM
-To create a Image Carousel using React 
-
-## ALGORITHM
-### STEP 1 Initial Setup:
-Input: A list of images to display in the carousel.
-
-Output: A component displaying the images with navigation controls (e.g., next/previous buttons).
-
-### Step 2 State Management:
-Use a state variable (currentIndex) to track the index of the current image displayed.
-
-The carousel starts with the first image, so initialize currentIndex to 0.
-
-### Step 3 Navigation Controls:
-Next Image: When the "Next" button is clicked, increment currentIndex.
-
-If currentIndex is at the end of the image list (last image), loop back to the first image using modulo:
-currentIndex = (currentIndex + 1) % images.length;
-
-Previous Image: When the "Previous" button is clicked, decrement currentIndex.
-
-If currentIndex is at the beginning (first image), loop back to the last image:
-currentIndex = (currentIndex - 1 + images.length) % images.length;
-
-### Step 4 Displaying the Image:
-The currentIndex determines which image is displayed.
-
-Using the currentIndex, display the corresponding image from the images list.
-
-### Step 5 Auto-Rotation:
-Set an interval to automatically change the image after a set amount of time (e.g., 3 seconds).
-
-Use setInterval to call the nextImage() function at regular intervals.
-
-Clean up the interval when the component unmounts using clearInterval to prevent memory leaks.
-
-## PROGRAM
-
-### ImageCarousel.jsx
-```
 import { useState, useEffect, useCallback } from "react";
 import "./ImageCarousel.css";
 
@@ -149,22 +100,3 @@ export default function ImageCarousel() {
     </div>
   );
 }
-```
-
-### App.jsx
-```
-import ImageCarousel from "./ImageCarousel";
-
-export default function App() {
-  return <ImageCarousel />;
-}
-```
-
-## OUTPUT
-
-<img width="1919" height="1041" alt="Screenshot 2026-03-18 132906" src="https://github.com/user-attachments/assets/43047411-b435-4a5e-a2d0-b1f86b02bb95" />
-
-<img width="1919" height="1046" alt="Screenshot 2026-03-18 132915" src="https://github.com/user-attachments/assets/7d4b80a6-5165-4fd0-8353-3663fa32d79d" />
-
-## RESULT
-The program for creating Image Carousel using React is executed successfully.
